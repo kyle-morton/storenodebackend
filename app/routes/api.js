@@ -40,6 +40,8 @@ module.exports = function(app, express) {
 	// route to authenticate a user (POST http://localhost:8080/api/authenticate)
 	apiRouter.post('/authenticate', function(req, res) {
 
+		console.log('Authenticating User...' + ' ' + req.body.username + ' ' + req.body.password);
+
 	  // find the user
 	  User.findOne({
 	    username: req.body.username
