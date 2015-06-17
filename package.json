@@ -1,0 +1,19 @@
+{
+  "name": "nodestorebackend",
+  "version": "1.0.0",
+  "description": "This is the backend (Node, Express, MongoDB, Mongoose) application and API for front-end angular store application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kylemorton5770/storenodebackend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kylemorton5770/storenodebackend/issues"
+  },
+  "homepage": "https://github.com/kylemorton5770/storenodebackend#readme"
+}
