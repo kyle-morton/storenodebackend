@@ -102,10 +102,9 @@ module.exports = function(app, express) {
 	  if (token) {
 
 	    // verifies secret and checks exp
-	    jwt.verify(token, superSecret, function(err, decoded)
+	    jwt.verify(token, superSecret, function(err, decoded) {
 
 	      if (err) {
-					console.log("Got ERROR: " + err);
 	        res.status(403).send({
 	        	success: false,
 	        	message: 'Failed to authenticate token.'
