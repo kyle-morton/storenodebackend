@@ -4,9 +4,6 @@
 	<meta charset="UTF-8">
 	<title>User CRM</title>
 
-	<!-- FOR ANGULAR ROUTING -->
-	<base href="/">
-
 	<!-- CSS  -->
 	<!-- load bootstrap from CDN and custom CSS -->
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.1/paper/bootstrap.min.css">
@@ -19,19 +16,8 @@
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-route.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-animate.js"></script>
 
-	<!-- controllers -->
-	<script src="app/controllers/mainCtrl.js"></script>
-	<script src="app/controllers/userCtrl.js"></script>
-
-	<!-- services -->
-	<script src="app/services/authService.js"></script>
-	<script src="app/services/userService.js"></script>
-
-	<!-- main Angular app files -->
-	<script src="app/app.routes.js"></script>
-	<script src="app/app.js"></script>
 </head>
-<body ng-app="userApp" ng-controller="mainController as main">
+<body >
 
 <!-- NAVBAR -->
 <header>
@@ -43,6 +29,7 @@
 	</div>
 	</div>
 </header>
+
 
 <h2 class="jumbotron">This is the welcome page for my Node.js/MongoDB store API which will service requests for users, auth, and orders!</h2>
 

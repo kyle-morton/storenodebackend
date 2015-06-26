@@ -13,6 +13,8 @@ module.exports = function(app, express) {
 	// route to generate sample user
 	apiRouter.post('/sample', function(req, res) {
 
+		console.log("/sample called with : " + req);
+
 		// look for the user named chris
 		User.findOne({ 'username': 'sample' }, function(err, user) {
 
