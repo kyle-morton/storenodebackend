@@ -37,6 +37,10 @@ app.use(express.static(__dirname + '/public'));
 // ROUTES FOR OUR API =================
 // ====================================
 
+//AUTH ROUTES ------------------------
+var authRoutes = require('./app/routes/authentication')(app, express);
+app.use('/authenticate', authRoutes);
+
 // API ROUTES ------------------------
 var apiRoutes = require('./app/routes/api')(app, express);
 app.use('/api', apiRoutes);
