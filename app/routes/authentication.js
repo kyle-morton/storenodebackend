@@ -11,7 +11,7 @@ module.exports = function(app, express) {
 	var authRouter = express.Router();
 
 	// route to authenticate a user (POST http://localhost:8080/api/authenticate)
-	apiRouter.post('/authenticate', function(req, res) {
+	authRouter.post('/authenticate', function(req, res) {
 
 		console.log('Authenticating User...' + ' ' + req.body.username + ' ' + req.body.password);
 
