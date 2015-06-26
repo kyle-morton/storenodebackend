@@ -39,7 +39,8 @@ app.use(express.static(__dirname + '/public'));
 
 //AUTH ROUTES ------------------------
 var authRoutes = require('./app/routes/authentication')(app, express);
-app.use('/authenticate', authRoutes);
+app.use('/authenticate', authRoutes); //any coming onto this get handled by
+																			//authRouter
 
 // API ROUTES ------------------------
 var apiRoutes = require('./app/routes/api')(app, express);

@@ -91,7 +91,7 @@ module.exports = function(app, express) {
 	// });
 
 	// route middleware to verify a token
-	apiRouter.use('/api',function(req, res, next) {
+	apiRouter.use(function(req, res, next) {
 		// do logging
 		console.log('Somebody just came to our app!');
 
