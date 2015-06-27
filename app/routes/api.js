@@ -15,10 +15,10 @@ module.exports = function(app, express) {
 
 		console.log("/sample called with : " + req);
 
-		// look for the user named chris
+		// look for the user named sample
 		User.findOne({ 'username': 'sample' }, function(err, user) {
 
-			// if there is no chris user, create one
+			// if there is no sample user, create one
 			if (!user) {
 				var sampleUser = new User();
 
@@ -32,6 +32,43 @@ module.exports = function(app, express) {
 
 				// if there is a chris, update his password
 				user.password = 'user';
+				user.save();
+			}
+
+		});
+
+	});
+
+	// route to generate sample user
+	apiRouter.post('/newUser', function(req, res) {
+
+		console.log("/newUser called with : " + req);
+
+		// look for the user named chris
+		User.findOne({ 'username': req.username}, function(err, user) {
+
+			// if there is no chris user, create one
+			if (!user) {
+				var newUser = new User();
+
+				//Create New user object
+				newUser.name = req.name;
+				newUser.username = req.username;
+				newUser.password = req.password;
+				newUser.email = req.email;
+				newUser.address = req.address;
+				newUser.phone = req.phone;
+
+				//Persist to mongoDB
+				newUser.save();
+			} else {
+				console.log(user);
+
+				// if there is a user, update his info
+				newUser.name = req.name;
+				newUser.email = req.email;
+				newUser.address = req.address;
+				newUser.phone = req.phone;
 				user.save();
 			}
 

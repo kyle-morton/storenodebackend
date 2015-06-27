@@ -24,7 +24,7 @@ app.use(function(req, res, next) {
 //	x-requested-with, Content-Type,
 //	Content-Range, Content-Disposition, Content-Description'
 	res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
-//	res.setHeader('Access-Control-Allow-Headers', '');
+
 
 
 
