@@ -16,6 +16,8 @@ var UserSchema   = new Schema({
 UserSchema.pre('save', function(next) {
 	var user = this;
 
+	console.log("pre-save called!!!");
+
 	// hash the password only if the password has been changed or user is new
 	if (!user.isModified('password')) return next();
 
@@ -23,8 +25,13 @@ UserSchema.pre('save', function(next) {
 	bcrypt.hash(user.password, null, null, function(err, hash) {
 		if (err) return next(err);
 
+		console.log("hashed pw!!");
+
 		// change the password to the hashed version
 		user.password = hash;
+
+		console.log("new user pw: " + user.password);
+
 		next();
 	});
 });

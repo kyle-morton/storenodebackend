@@ -41,6 +41,9 @@ module.exports = function(app, express) {
 
 				//Persist to mongoDB
 				newUser.save();
+
+				console.log("saved new user")!
+
 			} else {
 				console.log("Existing user found");
 
