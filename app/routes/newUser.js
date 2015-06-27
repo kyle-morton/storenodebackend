@@ -16,9 +16,9 @@ module.exports = function(app, express) {
 		console.log("/newUser called with : " + req);
 
 		// look for the user named chris
-		User.findOne({ 'username': req.username}, function(err, user) {
+		User.findOne({ 'username': req.body.username}, function(err, user) {
 
-			console.log("looked for user with that username: " + req.username)
+			console.log("looked for user with that username: " + req.body.username)
 
 			// if there is no chris user, create one
 			if (!user) {
@@ -30,12 +30,12 @@ module.exports = function(app, express) {
 				console.log("after declaring new user");
 
 				//Create New user object
-				newUser.name = req.name;
-				newUser.username = req.username;
-				newUser.password = req.password;
-				newUser.email = req.email;
-				newUser.address = req.address;
-				newUser.phone = req.phone;
+				newUser.name = req.body.name;
+				newUser.username = req.body.username;
+				newUser.password = req.body.password;
+				newUser.email = req.body.email;
+				newUser.address = req.body.address;
+				newUser.phone = req.body.phone;
 
 				console.log("newUser : " + newUser);
 
@@ -48,10 +48,10 @@ module.exports = function(app, express) {
 				console.log("Existing user found");
 
 				// if there is a user, update his info
-				newUser.name = req.name;
-				newUser.email = req.email;
-				newUser.address = req.address;
-				newUser.phone = req.phone;
+				newUser.name = req.body.name;
+				newUser.email = req.body.email;
+				newUser.address = req.body.address;
+				newUser.phone = req.body.phone;
 				user.save();
 			}
 
