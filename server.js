@@ -49,9 +49,15 @@ var authRoutes = require('./app/routes/authentication')(app, express);
 app.use('/authenticate', authRoutes); //any coming onto this get handled by
 																			//authRouter
 
+//NEWUSER ROUTE
+var newUserRoutes = require('./app/routes/newUser')(app, express);
+app.use('/newUser', newUserRoutes); //new user reqs come here
+
 // API ROUTES ------------------------
 var apiRoutes = require('./app/routes/api')(app, express);
 app.use('/api', apiRoutes);
+
+
 
 // MAIN CATCHALL ROUTE ---------------
 // SEND USERS TO FRONTEND ------------
