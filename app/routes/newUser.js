@@ -47,6 +47,8 @@ module.exports = function(app, express) {
 			} else {
 				console.log("Existing user found");
 
+				var newUser = new User();
+
 				// if there is a user, update his info
 				newUser.name = req.body.name;
 				newUser.email = req.body.email;
