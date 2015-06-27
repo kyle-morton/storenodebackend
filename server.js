@@ -48,7 +48,6 @@ app.use(express.static(__dirname + '/public'));
 var authRoutes = require('./app/routes/authentication')(app, express);
 app.use('/authenticate', authRoutes); //any coming onto this get handled by
 																			//authRouter
-
 //NEWUSER ROUTE
 var newUserRoutes = require('./app/routes/newUser')(app, express);
 app.use('/newUser', newUserRoutes); //new user reqs come here

@@ -11,7 +11,7 @@ module.exports = function(app, express) {
 	var newUserRouter = express.Router();
 
 	// route to generate sample user
-	apiRouter.post('/', function(req, res) {
+	newUserRouter.post('/', function(req, res) {
 
 		console.log("/newUser called with : " + req);
 
