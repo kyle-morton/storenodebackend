@@ -18,9 +18,16 @@ module.exports = function(app, express) {
 		// look for the user named chris
 		User.findOne({ 'username': req.username}, function(err, user) {
 
+			console.log("looked for user with that username: " + req.username)
+
 			// if there is no chris user, create one
 			if (!user) {
+
+				console.log("new user!");
+
 				var newUser = new User();
+
+				console.log("after declaring new user");
 
 				//Create New user object
 				newUser.name = req.name;
@@ -30,10 +37,12 @@ module.exports = function(app, express) {
 				newUser.address = req.address;
 				newUser.phone = req.phone;
 
+				console.log("newUser : " + newUser);
+
 				//Persist to mongoDB
 				newUser.save();
 			} else {
-				console.log(user);
+				console.log("Existing user found");
 
 				// if there is a user, update his info
 				newUser.name = req.name;
@@ -44,6 +53,8 @@ module.exports = function(app, express) {
 			}
 
 		});
+
+		console.log("/newUser post ended!");
 
 	});
 
